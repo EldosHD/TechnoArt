@@ -92,7 +92,7 @@ def blockPrint(width, height, img):
 def main():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        description="This program prints \x1b[38;5;213mTechnoblade\x1b[0m fanart to the terminal. It comes with a few arts by default, but you can specify your own image with the -i flag.",
+        description="This program prints \x1b[38;5;213mTechnoblade\x1b[0m fanart to the terminal. It comes with a few arts by default, but you can specify your own image with the -i flag. The image should be a PNG and at max 64x64 pixels.",
         epilog=epilog
     )
 
