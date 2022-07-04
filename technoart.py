@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 # converts a random img to pixelart
 from PIL import Image
-from os import listdir
+from os import listdir, path
 import argparse
 import random
 
 block = "▀"
+workdir = path.dirname(path.realpath(__file__))
 
-defaultImg = "./img/technoFaceSmall.png"
-version = 1.0
+defaultImg = workdir + "/img/technoFaceSmall.png"
+version = "1.0.1"
 epilog = f"""
 Written by: EldosHD
 Version: {version}
@@ -109,14 +110,14 @@ def main():
         "-i", "--image", help="specifies the image to use. If not specified, a 8x8 pixel technoface will be used. This option can't be used with the -r flag",
         default=defaultImg)
     parser.add_argument("--version", action="version",
-                        version="%(prog)s " + str(version))
+                        version="%(prog)s " + version)
 
     args = parser.parse_args()
 
     if args.random:
-        imgList = listdir("./img")
+        imgList = listdir(workdir + "/img")
         randImg = imgList[random.randint(0, len(imgList) - 1)]
-        args.image = f"./img/{randImg}"
+        args.image = f"{workdir}/img/{randImg}"
 
     img = Image.open(args.image)
     width, height = img.size
