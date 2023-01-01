@@ -6,6 +6,7 @@ This is pixel art renderer for the terminal. This program reads in a given pixel
 By default this program uses Technoblade pixelart. But you can either add own art to the img folder or specify a specific file with the `-i` flag. Since every pixel gets converted to a character, the maximum size of the art is limited to the terminal size. In my tests, the maximum size of the art was around 64x64. I've only tested png files so far.
 
 ![](screenshot.png)
+
 ## Installation
 
 You need python 3 installed to use this program.
