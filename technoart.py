@@ -9,7 +9,7 @@ block = "▀"
 workdir = path.dirname(path.realpath(__file__))
 
 defaultImg = workdir + "/img/technoFaceSmall.png"
-version = "1.0.1"
+version = "1.0.2"
 epilog = f"""
 Written by: EldosHD
 Version: {version}
@@ -105,7 +105,8 @@ def main():
                       help="uses spaces as pixels. This way each pixel from the source will end up at 16x16 pixels in the terminal. Use this if the img is small")
 
     imgPickMode.add_argument("-r", "--random", action="store_true",
-                             help="picks a random image from the image folder. This option can't be used with the -i flag")
+                             help="picks a random image from the image folder. This option can't be used with the -i flag") # TODO: change to consider the last used image
+    imgPickMode.add_argument('-t', '--true-random', action="store_true",help="like -r, but without considering the last image")
     imgPickMode.add_argument(
         "-i", "--image", help="specifies the image to use. If not specified, a 8x8 pixel technoface will be used. This option can't be used with the -r flag",
         default=defaultImg)
